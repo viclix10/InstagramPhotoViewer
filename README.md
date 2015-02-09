@@ -8,14 +8,14 @@ For each photo displayed, user can see the following details:
  * [x] Username
  * [ ] (Optional) relative timestamp, 
  * [x] like count, 
- * [ ] user profile image
+ * [x] user profile image
 
 
 The following advanced user stories are optional:
  * [x] Advanced: Add pull-to-refresh for popular stream with SwipeRefreshLayout
  * [x] Advanced: Show latest comment for each photo (bonus: show last 2 comments)
  * [x] Advanced: Display each photo with the same style and proportions as the real Instagram (see screens below)
- * [ ] Advanced: Display each user profile image using a RoundedImageView
+ * [x] Advanced: Display each user profile image using a RoundedImageView
  * [x] Advanced: Display a nice default placeholder graphic for each image during loading (read more about Picasso)
  * [x] Advanced: Improve the user interface through styling and coloring
 
