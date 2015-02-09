@@ -23,10 +23,10 @@
         android:layout_height="wrap_content"
         android:minHeight="50dp"
         android:src="@drawable/ic_launcher"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:scaleType="fitXY" />
+        android:scaleType="fitXY"
+        android:layout_alignTop="@+id/tvLikes"
+        android:layout_toRightOf="@+id/tvUsername"
+        android:layout_toEndOf="@+id/tvUsername" />
 
     <TextView android:id="@+id/tvUsername"
         android:hint="userImg"
@@ -34,26 +34,23 @@
         android:layout_height="wrap_content"
         android:textSize="15sp"
         android:textColor="@color/blue"
+        android:gravity="center_vertical"
         android:layout_alignTop="@+id/ivUserImg"
-        android:layout_toRightOf="@+id/ivUserImg"
-        android:layout_toEndOf="@+id/ivUserImg"
-        android:layout_alignBottom="@+id/ivUserImg"
-        android:drawableLeft="@drawable/user"
-        android:gravity="center_vertical" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/ivUserImg" />
 
     <TextView android:id="@+id/tvLikes"
         android:hint="likes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="15sp"
-        android:layout_alignTop="@+id/tvUsername"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBottom="@+id/tvUsername"
         android:drawableLeft="@drawable/likes"
         android:textColor="@color/blue"
-        android:gravity="center_vertical"
-        />
+        android:gravity="center_vertical|right"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/ivImage"
+        android:layout_alignEnd="@+id/ivImage" />
 
     <TextView android:id="@+id/tvCaption"
         android:hint="caption"
@@ -65,7 +62,9 @@
         android:layout_alignParentLeft="true"
         android:drawableLeft="@drawable/caption"
         android:layout_alignParentStart="true"
-        />
+        android:layout_alignRight="@+id/ivImage"
+        android:layout_alignEnd="@+id/ivImage"
+        android:background="@color/material_blue_grey_800" />
 
     <Space
         android:layout_width="20px"
@@ -94,7 +93,8 @@
         android:inputType="textMultiLine"
         android:scrollbars="vertical"
         android:drawableLeft="@drawable/comments"
-        android:layout_below="@+id/space" />
+        android:layout_below="@+id/space"
+        android:background="@android:color/darker_gray" />
 
 
 

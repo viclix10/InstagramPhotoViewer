@@ -67,11 +67,13 @@ public class PictureDetailsActivity extends ActionBarActivity {
         Picasso.with(this)
                 .load(photo.userImageUrl)
                 .fit()
+                .placeholder(R.drawable.user)
+                .error(R.drawable.user)
                 .transform(transformation)
                 .into(userImg);
         username.setText(photo.username);
 
-        likes.setText(Integer.toString((photo.likes)));
+        likes.setText(Integer.toString((photo.likes))+ " Likes");
 
         image.setImageResource(0);
         Picasso.with(this).load(photo.imageUrl)
@@ -87,7 +89,7 @@ public class PictureDetailsActivity extends ActionBarActivity {
 
     }
 
-    String commentStr = "Comments -> \n";
+    String commentStr = "";
     static final String ACCESS_TOKEN = "25699d4557ac4bd8b79935597d7d7254";
 
     private void getComments(String id)
@@ -105,6 +107,7 @@ public class PictureDetailsActivity extends ActionBarActivity {
                 JSONArray commentsJson = null;
                 try {
                     commentsJson = response.getJSONArray("data");
+                    commentStr = commentsJson.length()+ " Comments \n";
                     for (int i = 0; i < commentsJson.length(); i++) {
                         //for(int i = 0 ; i < 2; i++) {
                         JSONObject commentJson = commentsJson.getJSONObject(i);
