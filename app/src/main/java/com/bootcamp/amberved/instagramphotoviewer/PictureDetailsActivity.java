@@ -76,6 +76,8 @@ public class PictureDetailsActivity extends ActionBarActivity {
         image.setImageResource(0);
         Picasso.with(this).load(photo.imageUrl)
                 .fit()
+                .placeholder(R.drawable.bridge)
+                .error(R.drawable.bridge)
                 .centerInside()
                 .into(image);
 

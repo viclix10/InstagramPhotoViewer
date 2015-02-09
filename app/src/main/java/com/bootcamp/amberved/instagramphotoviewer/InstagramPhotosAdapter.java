@@ -1,21 +1,13 @@
 package com.bootcamp.amberved.instagramphotoviewer;
 
 import android.content.Context;
-import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.makeramen.RoundedTransformationBuilder;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Transformation;
-
-import junit.framework.Test;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -50,6 +42,8 @@ public class InstagramPhotosAdapter extends ArrayAdapter<InstagramPhoto> {
         viewHolder.image.setImageResource(0);
         Picasso.with(getContext()).load(photo.imageUrl)
                 .fit()
+                .placeholder(R.drawable.bridge)
+                .error(R.drawable.bridge)
                 .centerInside()
                 .into(viewHolder.image);
 
