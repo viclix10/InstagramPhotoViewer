@@ -23,9 +23,6 @@ public class InstagramPhotosAdapter extends ArrayAdapter<InstagramPhoto> {
 
     private static class ViewHolder {
         ImageView image;
-        TextView username;
-        TextView likes;
-        TextView caption;
     }
 
     public InstagramPhotosAdapter(Context context, List<InstagramPhoto> objects) {
@@ -44,14 +41,6 @@ public class InstagramPhotosAdapter extends ArrayAdapter<InstagramPhoto> {
             ImageView ivPhoto = (ImageView) convertView.findViewById(R.id.ivImage);
             viewHolder.image = ivPhoto;
 
-            TextView tvUsername = (TextView) convertView.findViewById(R.id.tvUsername);
-            viewHolder.username = tvUsername;
-
-            TextView tvLikes = (TextView) convertView.findViewById(R.id.tvLikes);
-            viewHolder.likes = tvLikes;
-
-            TextView tvCaption = (TextView) convertView.findViewById(R.id.tvCaption);
-            viewHolder.caption = tvCaption;
 
             convertView.setTag(viewHolder);
         } else {
@@ -63,10 +52,6 @@ public class InstagramPhotosAdapter extends ArrayAdapter<InstagramPhoto> {
                 .fit()
                 .centerInside()
                 .into(viewHolder.image);
-
-        viewHolder.username.setText(photo.username);
-        viewHolder.likes.setText(Integer.toString((photo.likes)));
-        viewHolder.caption.setText(photo.caption);
 
         return convertView;
     }

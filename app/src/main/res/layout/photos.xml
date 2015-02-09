@@ -15,28 +15,4 @@
         android:minHeight="50dp"
         />
 
-    <TextView android:id="@+id/tvUsername"
-        android:hint="username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ivImage"
-        android:textSize="10sp"
-        />
-
-    <TextView android:id="@+id/tvLikes"
-        android:hint="likes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvUsername"
-        android:textSize="10sp"
-        />
-
-    <TextView android:id="@+id/tvCaption"
-        android:hint="caption"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvLikes"
-        android:textSize="10sp"
-        />
-
 </RelativeLayout>

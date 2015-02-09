@@ -18,6 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".PictureDetailsActivity"
+            android:label="@string/title_activity_picture_details" >
+        </activity>
     </application>
 
 </manifest>

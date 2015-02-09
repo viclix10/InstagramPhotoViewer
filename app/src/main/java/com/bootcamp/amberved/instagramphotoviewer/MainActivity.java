@@ -62,9 +62,9 @@ public class MainActivity extends Activity {
                 Toast.makeText(MainActivity.this, "OnClick", Toast.LENGTH_SHORT).show();
                 InstagramPhoto photo = photos.get(position);
 
-                //Intent i = new Intent(MainActivity.this, PhotoDetailsActivity.class);
-                //i.putExtra("photo", photo);
-                //startActivity(i);
+                Intent i = new Intent(MainActivity.this, PictureDetailsActivity.class);
+                i.putExtra("photo", photo);
+                startActivity(i);
             }
         });
     }
@@ -80,7 +80,7 @@ public class MainActivity extends Activity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 swipeContainer.setRefreshing(false);
-                Log.i("DEBUG",response.toString());
+                //Log.i("DEBUG",response.toString());
                 JSONArray photosJson = null;
                 try {
                     photosJson = response.getJSONArray("data");
@@ -90,12 +90,12 @@ public class MainActivity extends Activity {
                         JSONObject photoJson = photosJson.getJSONObject(i);
                         InstagramPhoto photo = new InstagramPhoto();
                         photo.username = photoJson.getJSONObject("user").getString("username");
-                        //photo.userImageUrl = photoJson.getJSONObject("user").getString("profile_picture");
+                        photo.userImageUrl = photoJson.getJSONObject("user").getString("profile_picture");
                         photo.caption = photoJson.getJSONObject("caption").getString("text");
                         photo.imageUrl = photoJson.getJSONObject("images").getJSONObject("standard_resolution").getString("url");
                         photo.imageHeight = photoJson.getJSONObject("images").getJSONObject("standard_resolution").getInt("height");
                         photo.likes = photoJson.getJSONObject("likes").getInt("count");
-
+                        photo.id    = photoJson.getString("id");
                         photos.add(photo);
                     }
 
